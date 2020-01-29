@@ -1,0 +1,27 @@
+{
+  "name": "checkout-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoRoma/checkout-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoRoma/checkout-js/issues"
+  },
+  "homepage": "https://github.com/LeoRoma/checkout-js#readme"
+}
