@@ -8,11 +8,8 @@ class Shop {
     },
       this.total = 0
   }
-  checkout(items) {
-    this.inputChecker(items)
-  }
 
-  inputChecker(items) {
+  checkout(items) {
     if (Number.isInteger(items) === true || items.match(/[|\\/~^:,;?!&%$@*+a-z]/)) {
       this.total = -1
     } else {
@@ -24,10 +21,15 @@ class Shop {
     let newItems = items.split('');
 
     for (let i = 0; i < newItems.length; i++) {
-      // } else if (newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A') {
-      //   return 130
-      this.total += this.stockKeepingUnits[newItems[i]]
+      if (newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A') {
+        console.log(newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A')
+        this.total += 0
+        console.log(this.total)
+      } else {
+        this.total += this.stockKeepingUnits[newItems[i]]
+      }
     }
+    console.log(this.total)
   }
 }
 

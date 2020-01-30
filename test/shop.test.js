@@ -26,18 +26,23 @@ describe('Shop', () => {
     expect(shop.total).toEqual(-1)
   })
 
-  test('return 100 with AA', () => {
+  xtest('return 100 with AA', () => {
     shop.checkout('AA')
     expect(shop.total).toEqual(100)
   })
 
-  test('return 115 with ABCD', () => {
+  xtest('return 115 with ABCD', () => {
     shop.checkout('ABCD')
     expect(shop.total).toEqual(115)
   })
 
-  xtest('return 130 with AAAA', () => {
-    // shop.checkout('AAA')
-    expect(shop.checkout('AAA')).toEqual(130)
+  test('return 130 with AAA', () => {
+    shop.checkout('AAA')
+    expect(shop.total).toEqual(130)
+  })
+
+  xtest('return 260 with AAAAAA', () => {
+    shop.checkout('AAAAAA')
+    expect(shop.total).toEqual(260)
   })
 });
