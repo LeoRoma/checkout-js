@@ -32,5 +32,6 @@ class Shop {
     console.log(this.total)
   }
 }
-
+// AAA = 130
+// BB = 45
 module.exports = Shop;
