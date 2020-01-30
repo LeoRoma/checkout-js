@@ -7,24 +7,31 @@ describe('Shop', () => {
   });
 
   test('abc return -1', () => {
-    expect(shop.checkout("aBc")).toEqual(-1)
+    shop.checkout("aBc")
+    expect(shop.total).toEqual(-1)
   })
 
-  xtest('-B8x return - 1', () => {
-    expect(shop.checkout("-B8x")).toEqual(-1)
+  test('-B8x return - 1', () => {
+    shop.checkout("-B8x")
+    expect(shop.total).toEqual(-1)
+  })
+
+  test('only symbols return - 1', () => {
+    shop.checkout("-+=!?")
+    expect(shop.total).toEqual(-1)
   })
 
   test('return -1 with number as input', () => {
     shop.checkout(12)
-    expect(shop.integerChecker(12)).toEqual(-1)
+    expect(shop.total).toEqual(-1)
   })
 
-  xtest('return 100 with AA', () => {
+  test('return 100 with AA', () => {
     shop.checkout('AA')
     expect(shop.total).toEqual(100)
   })
 
-  xtest('return 115 with ABCD', () => {
+  test('return 115 with ABCD', () => {
     shop.checkout('ABCD')
     expect(shop.total).toEqual(115)
   })
