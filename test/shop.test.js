@@ -26,7 +26,7 @@ describe('Shop', () => {
     expect(shop.total).toEqual(-1)
   })
 
-  xtest('return 100 with AA', () => {
+  test('return 100 with AA', () => {
     shop.checkout('AA')
     expect(shop.total).toEqual(100)
   })

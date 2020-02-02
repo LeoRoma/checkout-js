@@ -4,13 +4,15 @@ class Shop {
       'A': 50,
       'B': 30,
       'C': 20,
-      'D': 15
+      'D': 15, 
+      'AAA': 130
     },
       this.total = 0
   }
 
   checkout(items) {
-    if (Number.isInteger(items) === true || items.match(/[|\\/~^:,;?!&%$@*+a-z]/)) {
+    let symbols = (/[|\\/~^:,;?!&%$@*+a-z]/)
+    if (Number.isInteger(items) === true || items.match(symbols)) {
       this.total = -1
     } else {
       this.stockCalculator(items)
@@ -18,16 +20,17 @@ class Shop {
   }
 
   stockCalculator(items) {
-    let newItems = items.split('');
-
-    for (let i = 0; i < newItems.length; i++) {
-      if (newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A') {
-        console.log(newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A')
-        this.total += 0
-        console.log(this.total)
-      } else {
-        this.total += this.stockKeepingUnits[newItems[i]]
-      }
+  
+    for (let i = 0; i < items.length; i++) {
+      let item = items.charAt(i)
+      
+      // if (newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A') {
+      //   console.log(newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A')
+      //   this.total += 0
+      //   console.log(this.total)
+      // } else {
+        this.total += this.stockKeepingUnits[item]
+      // }
     }
     console.log(this.total)
   }
