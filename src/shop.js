@@ -4,7 +4,7 @@ class Shop {
       'A': 50,
       'B': 30,
       'C': 20,
-      'D': 15, 
+      'D': 15,
       'AAA': 130
     },
       this.total = 0
@@ -20,19 +20,28 @@ class Shop {
   }
 
   stockCalculator(items) {
-  
-    for (let i = 0; i < items.length; i++) {
-      let item = items.charAt(i)
-      
-      // if (newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A') {
-      //   console.log(newItems[i] === 'A' && newItems[i + 1] === 'A' && newItems[i + 2] === 'A')
-      //   this.total += 0
-      //   console.log(this.total)
-      // } else {
-        this.total += this.stockKeepingUnits[item]
-      // }
+    let bonusAAA = 'AAA';
+    let bonus = 0
+    let last = null;
+    let count = 0;
+    if (items.match(bonusAAA)){
+      bonus += 1
+      // items.remove(bonusAAA)
+      return true
     }
-    console.log(this.total)
+    // for (let i = 0; i < items.length; i++) {
+    //   let item = items.charAt(i)
+    //   // console.log(item == item -1)
+    //   if (item != last) {
+    //     last = item;
+    //     count += 1;
+    //     console.log(count)
+    //   } else {
+    //     this.total += this.stockKeepingUnits[item]
+    //   }
+
+    //   console.log(this.total)
+    // }
   }
 }
 // AAA = 130
