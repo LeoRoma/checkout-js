@@ -21,29 +21,27 @@ class Shop {
 
   stockCalculator(items) {
     let bonusAAA = 'AAA';
-    let bonus = 0
-    let last = null;
-    let count = 0;
-    if (items.match(bonusAAA)){
-      bonus += 1
+    if (items.match(bonusAAA)) {
+      // this.bonusAAACalculator(items);
       // items.remove(bonusAAA)
-      return true
+      this.total -= 20
+      // console.log(bonus)
     }
-    // for (let i = 0; i < items.length; i++) {
-    //   let item = items.charAt(i)
-    //   // console.log(item == item -1)
-    //   if (item != last) {
-    //     last = item;
-    //     count += 1;
-    //     console.log(count)
-    //   } else {
-    //     this.total += this.stockKeepingUnits[item]
-    //   }
+    for (let i = 0; i < items.length; i++) {
+      let item = items.charAt(i)
+      // // console.log(item == item -1)
+      // if (items[i++] === items[i] && items[i] === items[i+1]){
+      //   this.total -= 20
+      // } else {
+      this.total += this.stockKeepingUnits[item]
+    }
 
-    //   console.log(this.total)
-    // }
+    console.log(this.total)
   }
 }
+
+
+
 // AAA = 130
 // BB = 45
 module.exports = Shop;
