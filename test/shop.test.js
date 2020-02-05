@@ -36,7 +36,7 @@ describe('Shop', () => {
     expect(shop.total).toEqual(115)
   })
 
-  xtest('return 130 with AAA', () => {
+  test('return 130 with AAA', () => {
     shop.checkout('AAA')
     expect(shop.total).toEqual(130)
   })
@@ -46,4 +46,13 @@ describe('Shop', () => {
     expect(shop.total).toEqual(260)
   })
 
+  test('return 310 with AAAAAAA', () => {
+    shop.checkout('AAAAAAA')
+    expect(shop.total).toEqual(310)
+  })
+
+  test('return 360 with AAAAAAAA', () => {
+    shop.checkout('AAAAAAAA')
+    expect(shop.total).toEqual(360)
+  })
 });

@@ -20,25 +20,24 @@ class Shop {
   }
 
   stockCalculator(items) {
-    let bonusAAA = 'AAA';
-    if (items.match(bonusAAA)) {
-      // this.bonusAAACalculator(items);
-      // items.remove(bonusAAA)
-      this.total -= 20
-      // console.log(bonus)
-    }
+    let discountAAA = 0;
+    let discountBB = 0
     for (let i = 0; i < items.length; i++) {
       let item = items.charAt(i)
-      // // console.log(item == item -1)
-      // if (items[i++] === items[i] && items[i] === items[i+1]){
-      //   this.total -= 20
-      // } else {
-      this.total += this.stockKeepingUnits[item]
-    }
+      if (item === 'A') {
+        discountAAA += 1
+      } else if (item === 'B') {
+        discountBB += 1
+      } else {
+        this.total += this.stockKeepingUnits[item]
+      }
+      let discountAAACalculator = Math.floor(discountAAA / 3) * 20;
+      console.log(discountAAACalculator)
+      this.total -= discountAAACalculator
 
-    console.log(this.total)
+      console.log(this.total)
+    }
   }
-}
 
 
 
