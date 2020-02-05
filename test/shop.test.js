@@ -7,22 +7,22 @@ describe('Shop', () => {
   });
 
   describe('input check return -1 when', () => {
-    xtest('lowercase char', () => {
+    test('lowercase char', () => {
       shop.checkout("aBc")
       expect(shop.total).toEqual(-1)
     })
   
-    xtest('mixed lowercase char, symbols and numbers', () => {
+    test('mixed lowercase char, symbols and numbers', () => {
       shop.checkout("-B8x")
       expect(shop.total).toEqual(-1)
     })
   
-    xtest('symbols', () => {
+    test('symbols', () => {
       shop.checkout("-+=!?")
       expect(shop.total).toEqual(-1)
     })
   
-    xtest('numbers', () => {
+    test('numbers', () => {
       shop.checkout(12)
       expect(shop.total).toEqual(-1)
     })
@@ -44,17 +44,17 @@ describe('Shop', () => {
     expect(shop.total).toEqual(130)
   })
 
-  test('return 260 with AAAAAA', () => {
+  xtest('return 260 with AAAAAA', () => {
     shop.checkout('AAAAAA')
     expect(shop.total).toEqual(260)
   })
 
-  test('return 310 with AAAAAAA', () => {
+  xtest('return 310 with AAAAAAA', () => {
     shop.checkout('AAAAAAA')
     expect(shop.total).toEqual(310)
   })
 
-  test('return 360 with AAAAAAAA', () => {
+  xtest('return 360 with AAAAAAAA', () => {
     shop.checkout('AAAAAAAA')
     expect(shop.total).toEqual(360)
   })
