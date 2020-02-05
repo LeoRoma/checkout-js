@@ -1,8 +1,8 @@
 # Checkout
 
-- The program is not completed yet, needs to be implemented with the bonus calculation.
+
 - To build this program I have utilised Test Driven Development (TDD) technique, followed by red-green-refactor cycle, by using the acceptance criteria as a guidance to my tests.
-- As the program is not completed yet all the tests are passing but not the bonuses one.
+
 
 # Instruction
 
