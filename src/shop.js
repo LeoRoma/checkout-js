@@ -7,7 +7,9 @@ class Shop {
       'D': 15,
       'AAA': 130
     },
-      this.total = 0
+      this.total = 0;
+    this.discountAAA = 0;
+    this.discountBB = 0;
   }
 
   checkout(items) {
@@ -20,27 +22,27 @@ class Shop {
   }
 
   stockCalculator(items) {
-    let discountAAA = 0;
-    let discountBB = 0
     for (let i = 0; i < items.length; i++) {
       let item = items.charAt(i)
       if (item === 'A') {
-        discountAAA += 1
+        this.discountAAA += 1
       } else if (item === 'B') {
-        console.log(item)
-        discountBB += 1
+        this.discountBB += 1
       }
-      console.log(item)
       this.total += this.stockKeepingUnits[item]
     }
-    let discountAAACalculator = Math.floor(discountAAA / 3) * 20;
-  
-    this.total -= discountAAACalculator
+    this.discountAAACalculator()
+    this.discountBBCalculator()
+  }
 
-    let discountBBCalculator = Math.floor(discountBB / 2) * 15;
-   
-    this.total -= discountBBCalculator
-    console.log(this.total)
+  discountAAACalculator() {
+    let discountA = Math.floor(this.discountAAA / 3) * 20;
+    this.total -= discountA
+  }
+
+  discountBBCalculator() {
+    let discountB = Math.floor(this.discountBB / 2) * 15;
+    this.total -= discountB
   }
 }
 

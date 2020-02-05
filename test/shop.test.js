@@ -63,7 +63,7 @@ describe('Shop', () => {
     })
   })
 
-  describe('discount BB', () => {
+ describe('discount BB', () => {
     test('return 45 with 2 B', () => {
       shop.checkout('BB')
       expect(shop.total).toEqual(45)
