@@ -31,14 +31,17 @@ class Shop {
       } else {
         this.total += this.stockKeepingUnits[item]
       }
-      let discountAAACalculator = Math.floor(discountAAA / 3) * 20;
-      console.log(discountAAACalculator)
-      this.total -= discountAAACalculator
+      // let discountAAACalculator = Math.floor(discountAAA / 3) * 20;
+      // console.log(discountAAACalculator)
+      // this.total -= discountAAACalculator
 
+      let discountBBCalculator = Math.floor(discountAAA / 2) * 15;
+      console.log(discountBBCalculator)
+      this.total -= discountBBCalculator
       console.log(this.total)
     }
   }
-
+}
 
 
 // AAA = 130

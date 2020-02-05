@@ -6,25 +6,28 @@ describe('Shop', () => {
     shop = new Shop;
   });
 
-  xtest('abc return -1', () => {
-    shop.checkout("aBc")
-    expect(shop.total).toEqual(-1)
+  describe('input check return -1 when', () => {
+    xtest('lowercase char', () => {
+      shop.checkout("aBc")
+      expect(shop.total).toEqual(-1)
+    })
+  
+    xtest('mixed lowercase char, symbols and numbers', () => {
+      shop.checkout("-B8x")
+      expect(shop.total).toEqual(-1)
+    })
+  
+    xtest('symbols', () => {
+      shop.checkout("-+=!?")
+      expect(shop.total).toEqual(-1)
+    })
+  
+    xtest('numbers', () => {
+      shop.checkout(12)
+      expect(shop.total).toEqual(-1)
+    })
   })
-
-  xtest('-B8x return - 1', () => {
-    shop.checkout("-B8x")
-    expect(shop.total).toEqual(-1)
-  })
-
-  xtest('only symbols return - 1', () => {
-    shop.checkout("-+=!?")
-    expect(shop.total).toEqual(-1)
-  })
-
-  xtest('return -1 with number as input', () => {
-    shop.checkout(12)
-    expect(shop.total).toEqual(-1)
-  })
+  
 
   xtest('return 100 with AA', () => {
     shop.checkout('AA')
@@ -54,5 +57,10 @@ describe('Shop', () => {
   test('return 360 with AAAAAAAA', () => {
     shop.checkout('AAAAAAAA')
     expect(shop.total).toEqual(360)
+  })
+
+  test('return 45 with BB', () => {
+    shop.checkout('BB')
+    expect(shop.total).toEqual(45)
   })
 });
