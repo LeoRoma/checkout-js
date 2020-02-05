@@ -34,11 +34,11 @@ class Shop {
       this.total += this.stockKeepingUnits[item]
     }
     let discountAAACalculator = Math.floor(discountAAA / 3) * 20;
-    console.log(discountAAACalculator)
+  
     this.total -= discountAAACalculator
 
     let discountBBCalculator = Math.floor(discountBB / 2) * 15;
-    console.log(discountBB)
+   
     this.total -= discountBBCalculator
     console.log(this.total)
   }

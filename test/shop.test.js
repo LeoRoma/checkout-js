@@ -29,20 +29,23 @@ describe('Shop', () => {
   })
   
 
-  xtest('return 100 with AA', () => {
-    shop.checkout('AA')
-    expect(shop.total).toEqual(100)
+  describe('calculating stock without discount', () => {
+    test('return 100 with AA', () => {
+      shop.checkout('AA')
+      expect(shop.total).toEqual(100)
+    })
+  
+    test('return 115 with ABCD', () => {
+      shop.checkout('ABCD')
+      expect(shop.total).toEqual(115)
+    })
+  
+    test('return 130 with AABCD', () => {
+      shop.checkout('AABCD')
+      expect(shop.total).toEqual(165)
+    })
   })
-
-  xtest('return 115 with ABCD', () => {
-    shop.checkout('ABCD')
-    expect(shop.total).toEqual(115)
-  })
-
-  test('return 130 with AAA', () => {
-    shop.checkout('AAA')
-    expect(shop.total).toEqual(130)
-  })
+ 
 
   xtest('return 260 with AAAAAA', () => {
     shop.checkout('AAAAAA')
